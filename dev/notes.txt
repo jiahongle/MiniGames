@@ -1,0 +1,22 @@
+./setup.sh webdbuser localhost webdb password
+
+# DB_HOST = localhost
+# DB_USER = webdbuser
+# DB_PASSWORD = password
+# DB_NAME = webdb
+
+# If you want to talk directly to the db, with password: password
+# psql -U webdbuser -d webdb -h localhost 
+
+create table appuser ( 
+    userid varchar(20) PRIMARY KEY, 
+    password varchar(20) NOT NULL, 
+    firstname varchar(20) NOT NULL,
+    lastname varchar(20) NOT NULL,
+    birthdate DATE NOT NULL,
+    gender varchar NOT NULL,
+    favgame varchar NOT NULL
+); 
+
+insert into appuser (userid, password, firstname, lastname, birthdate, gender, favgame) values('auser', 'password', 'arnold', 'rosen', '2000-01-01', 'male', 'Rock Paper Scissors');
+insert into appuser (userid, password, firstname, lastname, birthdate, gender, favgame) values('auser', 'random', 'arnold', 'rosen', '2000-01-01', 'male', 'Rock Paper Scissors');
